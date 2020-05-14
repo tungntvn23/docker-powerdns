@@ -10,7 +10,7 @@ ENV REFRESHED_AT="2019-10-10" \
     MYSQL_DEFAULT_PASS="root" \
     MYSQL_DEFAULT_DB="pdns"
 
-RUN apk --update add bash libpq sqlite-libs libstdc++ libgcc mariadb-client mariadb-connector-c && \
+RUN apk --update add bash libpq sqlite-libs libstdc++ libgcc mariadb-client mariadb-connector-c pdns-backend-remote && \
     apk add --virtual build-deps \
       g++ make mariadb-dev postgresql-dev sqlite-dev curl boost-dev mariadb-connector-c-dev && \
     curl -sSL https://downloads.powerdns.com/releases/pdns-$POWERDNS_VERSION.tar.bz2 | tar xj -C /tmp && \
